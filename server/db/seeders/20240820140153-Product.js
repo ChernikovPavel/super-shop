@@ -9,7 +9,7 @@ module.exports = {
       arr.push({
         name: desc + i,
         price: i * 100,
-        description: 'описание товара ' + desc,
+        description: 'описание товара ' + 'крутой товар',
         image: '/img/' + i,
         number: Math.floor(Math.random() * 4500) + 500
       });
