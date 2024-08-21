@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
-import {Root} from './components'
-import { HomePage } from './pages'
+import {Root, RegButton} from './components'
+import { HomePage, TestPage } from './pages'
 import './tools/index.css'
+import './components/svgs/buttons/buttons.scss'
 function App() {
 
   const router = createBrowserRouter([
@@ -14,6 +15,10 @@ function App() {
           path: "/",
           element: <HomePage />,
         },
+        {
+          path: '/test',
+          element: <TestPage/>
+        }
       ],
     },
   ]);

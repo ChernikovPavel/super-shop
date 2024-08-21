@@ -3,6 +3,8 @@
 
 // варычи
 $body-bg: #dcdcdc;
+$pc-vw-font-size: 1.45vw;
+$pc-vw-btn-for-abs: 0.8vw;
 
 // тема
 $theme-colors: map-merge(
@@ -12,7 +14,7 @@ $theme-colors: map-merge(
   )
 );
 
-// классы
+// селекторы
 .form-control:focus {
   border-color: #1d2838;
   outline: 0;
@@ -32,51 +34,87 @@ $theme-colors: map-merge(
   display: inline-block;
   width: min-content;
   position: absolute;
-  top: .8vw;
-  left: .8vw;
   text-align: center;
   color: white;
   box-sizing: content-box;
   fill: #111010;
   z-index: 1;
-  filter: opacity(90%);
+  
+  transition: 0.3s;
+  
   &.hoover {
-    color: #fff;
+    color: rgb(255, 209, 110);
     transition: 0.35s;
-    filter: opacity(1);
   }
-  span {
-    font-size: 1.45vw;
-    user-select: none;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
+
+  &.left {
+    top: $pc-vw-btn-for-abs;
+    left: $pc-vw-btn-for-abs;
+
+    > span {
+      font-size: $pc-vw-font-size;
+      user-select: none;
+      position: absolute;
+      width: 90%;
+      top: 44%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
+  &.right-0 {
+    top: $pc-vw-btn-for-abs;
+    right: $pc-vw-btn-for-abs;
+
+
+    > span {
+      font-size: $pc-vw-font-size;
+      line-height: $pc-vw-font-size;
+      user-select: none;
+      position: absolute;
+      width: 90%;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.right-1 {
+    top: $pc-vw-btn-for-abs;
+    right: 14vw;
+
+
+    > span {
+      font-size: $pc-vw-font-size;
+      line-height: $pc-vw-font-size;
+      user-select: none;
+      position: absolute;
+      width: 90%;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
 }
 
-.w-10px {
-  width: 10px;
-  :hover {
-    width: 100px;
+.svg-test{
+  transition: 1s;
+}
+
+.arimo- {
+  // <weight>: Use a value from 400 to 700
+  font-family: 'Arimo', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  &250 {
+    font-family: 'Arimo', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 250;
   }
-}
-
-.btn:active {
-  scale: 0.94;
-  transition: 0.2s;
-  ::after {
-    translate: 1s;
+  &400 {
+    font-weight: 400;
   }
-}
-
-.lh-0 {
-  line-height: 0 !important;
-}
-
-input.form-control:focus {
-  border-color: #000000;
 }
 
 * {
@@ -95,4 +133,9 @@ input.form-control:focus {
     box-shadow: inset 0 -1px 0 #ddd;
   }
 }
+
+input.form-control:focus {
+  border-color: #000000;
+}
+
 @import 'bootstrap/scss/bootstrap';

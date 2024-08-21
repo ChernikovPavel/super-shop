@@ -1,10 +1,17 @@
 import React from 'react';
-import HomeButton from './HomeButton';
+import HomeButton from './svgs/buttons/HomeButton';
+import LKButton from './svgs/buttons/LKButton';
+import RegButton from './svgs/buttons/RegButton';
+import LoginButton from './svgs/buttons/LoginButton';
+import UnLogButton from './svgs/buttons/UnLog';
+
+const switcher = true;
 
 function NavBase({ Children }) {
   return (
     <div className="svg-navbar">
-      <HomeButton></HomeButton>
+      <HomeButton />
+      {switcher ? <><UnLogButton/> <LKButton /></> : (<><RegButton/> <LoginButton/></>)}
       <div>
         <svg
           viewBox={`0 0 1413 111`}
@@ -12,7 +19,7 @@ function NavBase({ Children }) {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M0 0H712.5H1413V111H1229.5L1193 81H712.5H98L70.5 111H0V0Z"
+            d="M0 0H712.5H1413V111H1208.5L1187.5 81H712.5H320.5L290.5 111H0V0Z"
             fill="#FFD900"
           />
         </svg>
