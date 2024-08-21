@@ -1,2 +1,3 @@
 import Root from './Root'
-export {Root}
+import NavBar from './NavBar'
+export {Root, NavBar}
