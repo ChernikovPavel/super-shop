@@ -8,6 +8,8 @@ export function setAccessToken(newToken) {
 }
 
 axiosInstance.interceptors.request.use((config) => {
+  console.log('interceptors', accessToken);
+  config.withCredentials = true;
   if (!config.headers.Authorization) {
     config.headers.Authorization = accessToken;
   }

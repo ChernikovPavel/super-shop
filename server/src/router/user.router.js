@@ -33,8 +33,10 @@ router.post('/reg', async (req, res) => {
         delete cleanUser.password;
 
         const { accessToken, refreshToken } = generateToken(cleanUser);
+        console.log(refreshToken)
         res
-          .cookie('refreshToken', refreshToken, cookieConfig.refresh)
+        //   .cookie('refreshToken', refreshToken, cookieConfig.refresh)
+        .cookie('title', 'text', cookieConfig.refresh)
           .json({ user: cleanUser, accessToken });
       }
     } catch (error) {
@@ -42,5 +44,11 @@ router.post('/reg', async (req, res) => {
       res.status(500).send(error);
     }
   }
+  res.end()
 });
+
+router.get('/cookie', (req,res)=> {
+
+    res.json({cookies: req.cookies})  
+})
 module.exports = router;

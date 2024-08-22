@@ -7,20 +7,20 @@ const verifyRefreshToken = (req, res, next) => {
     res.locals.user = user;
     next();
   } catch (error) {
-    console.log('Invalid refresh token');
-    res.sendStatus(401);
+    console.log('Invalid REFRESH token');
+    res.status(203).json({message: 'у пользователя нет REFRESH токена'})
   }
 };
 
 const verifyAccessToken = (req, res, next) => {
   try {
-    const accessToken = req.headers.authorization.split(' ')[1];
+    const accessToken = req.headers.authorization;
     const { user } = jwt.verify(accessToken, process.env.SECRET_ACCESS_TOKEN);
     res.locals.user = user;
     next();
   } catch (error) {
-    console.log('Invalid access token');
-    res.sendStatus(401);
+    console.log('Invalid ACCESS token');
+    res.status(203).json({message: 'у пользователя нет ACCESS токена'})
   }
 };
 

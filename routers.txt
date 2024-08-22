@@ -3,5 +3,8 @@ http://localhost:3000/
         products/
             all             GET
         users/
-            all/            GET
-            reg/            POST
+            all             GET
+            reg             POST
+            cookie          GET
+        token/
+            refresh         GET
