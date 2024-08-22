@@ -17,7 +17,7 @@ export default function UnLogButton() {
 <path d="M112.409 0H12.7411L1.3113e-06 22.6603L12.7411 35H116.725L127 12.5641L112.409 0Z" fill="#111010"/>
 </g>
 <defs>
-<filter id="filter0_i_37_3" x="0" y="0" width="127" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_i_37_3" x="0" y="0" width="127" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>

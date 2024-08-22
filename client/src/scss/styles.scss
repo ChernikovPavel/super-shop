@@ -43,8 +43,9 @@ $theme-colors: map-merge(
   transition: 0.3s;
   
   &.hoover {
-    color: rgb(255, 209, 110);
+    color: #FC0;
     transition: 0.35s;
+    text-shadow: #FC0 1px 0 18px;
   }
 
   &.left {

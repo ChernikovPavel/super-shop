@@ -2,3 +2,6 @@ http://localhost:3000/
     api/                    GET       
         products/
             all             GET
+        users/
+            all/            GET
+            reg/            POST
