@@ -5,6 +5,6 @@ http://localhost:3000/
         users/
             all             GET
             reg             POST
-            cookie          GET
+            log             POST
         token/
             refresh         GET

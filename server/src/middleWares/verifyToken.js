@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 
 const verifyRefreshToken = (req, res, next) => {
   try {
+    console.log(req.cookies)
     const { refreshToken } = req.cookies;
     const { user } = jwt.verify(refreshToken, process.env.SECRET_REFRESH_TOKEN);
     res.locals.user = user;
@@ -14,6 +15,7 @@ const verifyRefreshToken = (req, res, next) => {
 
 const verifyAccessToken = (req, res, next) => {
   try {
+
     const accessToken = req.headers.authorization;
     const { user } = jwt.verify(accessToken, process.env.SECRET_ACCESS_TOKEN);
     res.locals.user = user;

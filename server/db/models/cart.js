@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     productId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     number: DataTypes.INTEGER,
+    id: {primaryKey: true, type: [DataTypes.INTEGER], allowNull: true},
   }, {
     sequelize,
     modelName: 'Cart',

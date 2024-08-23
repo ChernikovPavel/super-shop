@@ -1,5 +1,5 @@
 import Root from './Root'
-import NavBar from './NavBar'
+import NavBar from './svgs/NavBar'
 import RegButton from './svgs/buttons/RegButton'
 import LoginButton from './svgs/buttons/LoginButton'
 import LKButton from './svgs/buttons/LKButton'

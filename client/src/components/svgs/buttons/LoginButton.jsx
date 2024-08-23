@@ -9,7 +9,7 @@ export default function LoginButton() {
     <div className={'svg-btn arimo-400 right-0' + clss}
     onMouseEnter={() => ChangeClss(' hoover')}
     onMouseLeave={() => ChangeClss('')}
-    onClick={() => navigate('/')}
+    onClick={() => navigate('/auth/log')}
     >
         <span className='btn-log-text'>Вход</span>
       <svg

@@ -9,7 +9,7 @@ export default function RegButton() {
     <div className={'svg-btn arimo-400 right-1' + clss}
     onMouseEnter={() => ChangeClss(' hoover')}
     onMouseLeave={() => ChangeClss('')}
-    onClick={() => navigate('/')}
+    onClick={() => navigate('/auth/reg')}
     >
         <span className=''>Регистрация</span>
         <svg width="12vw" viewBox="0 0 127 35" fill="none" xmlns="http://www.w3.org/2000/svg">

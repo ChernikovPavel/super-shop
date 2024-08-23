@@ -5,6 +5,10 @@
 $body-bg: #dcdcdc;
 $pc-vw-font-size: 1.45vw;
 $pc-vw-btn-for-abs: 0.8vw;
+$navbar-color: #cc9436;
+$bs-btn-font-family: 'Arimo', sans-serif;
+
+
 
 // тема
 $theme-colors: map-merge(
@@ -39,13 +43,13 @@ $theme-colors: map-merge(
   box-sizing: content-box;
   fill: #111010;
   z-index: 1;
-  
+
   transition: 0.3s;
-  
+
   &.hoover {
-    color: #FC0;
+    color: $navbar-color;
     transition: 0.35s;
-    text-shadow: #FC0 1px 0 18px;
+    // text-shadow: $navbar-color 1px 0 10px;
   }
 
   &.left {
@@ -66,7 +70,6 @@ $theme-colors: map-merge(
     top: $pc-vw-btn-for-abs;
     right: $pc-vw-btn-for-abs;
 
-
     > span {
       font-size: $pc-vw-font-size;
       line-height: $pc-vw-font-size;
@@ -83,7 +86,6 @@ $theme-colors: map-merge(
     top: $pc-vw-btn-for-abs;
     right: 14vw;
 
-
     > span {
       font-size: $pc-vw-font-size;
       line-height: $pc-vw-font-size;
@@ -95,11 +97,83 @@ $theme-colors: map-merge(
       transform: translate(-50%, -50%);
     }
   }
-
 }
 
-.svg-test{
+.brand-btn {
+  --bs-btn-padding-x: 0.75rem;
+  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-font-family: ;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-font-weight: 400;
+  --bs-btn-line-height: 1.5;
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-width: var(--bs-border-width);
+  --bs-btn-border-color: transparent;
+  --bs-btn-border-radius: var(--bs-border-radius);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 1px rgba(0, 0, 0, 0.075);
+  --bs-btn-disabled-opacity: 0.65;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem
+    rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+  display: inline-block;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  font-family: var(--bs-btn-font-family);
+  font-size: var(--bs-btn-font-size);
+  font-weight: var(--bs-btn-font-weight);
+  line-height: var(--bs-btn-line-height);
+  color: var(--bs-btn-color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+  background-color: var(--bs-btn-bg);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 2px;
+}
+
+.brandPaddingForm {
+  padding-right: 2.5rem;
+  padding-top: 3%;
+  padding-left: 2.5rem;
+  padding-bottom: 3%;
+}
+
+.trans-1{
   transition: 1s;
+}
+
+.log {
+  width: 45vw;
+}
+.log {
+  width: 65vw;
+}
+.mt-10 {
+  margin-top: 21vh;
+}
+
+.rounded-05 {
+  border-radius: 2px;
+}
+
+.brandRegForm {
+  width: 50vw;
+}
+
+.RegInput {
+  margin-top: 1em;
+}
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(0, 0, 0), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
 }
 
 .arimo- {
