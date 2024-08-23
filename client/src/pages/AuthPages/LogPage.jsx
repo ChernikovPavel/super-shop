@@ -1,8 +1,8 @@
 import React from 'react'
 import AuthForm from '../../components/AuthForm/AuthForm'
 
-export default function LogPage() {
+export default function LogPage({setUser}) {
   return (
-    <AuthForm type='log'/>
+    <AuthForm type='log' setUser={setUser}/>
   )
 }

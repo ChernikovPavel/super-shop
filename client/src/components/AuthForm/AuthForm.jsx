@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axiosInstance from '../../tools/axiosInstance';
 import { useNavigate } from 'react-router-dom';
-export default function AuthForm({ type = 'reg' }) {
+export default function AuthForm({ type = 'reg', setUser }) {
   const navigate = useNavigate();
   const submitHandler = (event) => {
     event.preventDefault();
@@ -11,6 +11,7 @@ export default function AuthForm({ type = 'reg' }) {
       .post(`/api/users/${type}`, { ...inputs })
       .then((el) => {
         if (!el.data.isError) {
+          setUser(el.data.user)
           navigate('/');
         }
       })

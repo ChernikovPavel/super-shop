@@ -16,22 +16,13 @@ const handler = (event) => {
     .catch((er) => console.error(er));
 };
 
-const handler2 = (event) => {
-  axiosInstance({
-    method: 'get',
-    url: 'http://localhost:3000/api/users/cookie',
-    data: {
-      email: '843@gmail.com',
-      login: 'testuser',
-      password: '2',
-      debug: true,
-    },
-  })
-    .then((e) => console.log(e))
-    .catch((er) => console.error(er));
-};
 
-export default function TestPage() {
+
+export default function TestPage({user}) {
+
+console.log('user в TestPage', user)
+
+
   const [varib, chngVarib] = useState(true);
   return (
     <>

@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './buttons.scss'
+import { setAccessToken } from '../../../tools/axiosInstance';
 
-export default function UnLogButton() {
-    const [clss, ChangeClss] = useState('');
-    const navigate = useNavigate()
+export default function UnLogButton({setUser}) {
+  const [clss, ChangeClss] = useState('');
+  const navigate = useNavigate()
+  const clickHandler = () => {
+    setUser({});
+    setAccessToken('')
+    navigate('/')
+  }
+
+
+
+
   return (
     <div className={'svg-btn arimo-400 right-1' + clss}
     onMouseEnter={() => ChangeClss(' hoover')}
     onMouseLeave={() => ChangeClss('')}
-    onClick={() => navigate('/')}
+    onClick={clickHandler}
     >
         <span className=''>Выйти</span>
         <svg width="12vw" viewBox="0 0 127 35" fill="none" xmlns="http://www.w3.org/2000/svg">

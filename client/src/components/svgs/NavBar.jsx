@@ -7,14 +7,13 @@ import UnLogButton from './buttons/UnLog';
 
 const switcher = false;
 
-function NavBase({ Children, user }) {
-  console.log('состояние юзера', Boolean(user));
-  console.log('сам юзер', user);
-  
+function NavBar({user, setUser}) {
+
+console.log('user в NavBar', user)
   return (
     <div className="svg-navbar">
       <HomeButton />
-      {user ? <><UnLogButton/> <LKButton /></> : (<><RegButton/> <LoginButton/></>)}
+      {user ? <><UnLogButton setUser={setUser}/> <LKButton /></> : (<><RegButton/> <LoginButton/></>)}
       <div>
         <svg
           viewBox={`0 0 1413 111`}
@@ -26,12 +25,10 @@ function NavBase({ Children, user }) {
             fill="#cc9436"
           />
         </svg>
-        {Children}
+
       </div>
     </div>
   );
 }
 
-export default function NavBar() {
-  return <NavBase></NavBase>;
-}
+export default NavBar;
