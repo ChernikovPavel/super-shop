@@ -17,6 +17,10 @@ $theme-colors: map-merge(
 );
 
 // селекторы
+body {
+  background-color: #393630;
+}
+
 .form-control:focus {
   border-color: #1d2838;
   outline: 0;
@@ -24,13 +28,29 @@ $theme-colors: map-merge(
 }
 
 .svg-navbar {
-  position: relative;
-
+  position: fixed;
+  z-index: 1;
+  width: 100%;
   > * {
     position: relative;
     color: white;
   }
 }
+
+.m {
+  &t- {
+    &100 {
+      margin-top: 100px;
+    }
+  }
+  &b- {
+    &100 {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+
 
 .svg-btn {
   display: inline-block;
@@ -44,6 +64,10 @@ $theme-colors: map-merge(
 
   transition: 0.3s;
 
+  &-test {
+    position: fixed;
+    z-index: 1;
+  }
   &.hoover {
     color: $navbar-color;
     transition: 0.35s;
@@ -97,17 +121,15 @@ $theme-colors: map-merge(
   }
 }
 
-.brand-form-label{
-  transform: translateY(-.3rem) translateX(-0.3rem);
+.brand-form-label {
+  transform: translateY(-0.3rem) translateX(-0.3rem);
 }
-.wrong-fill{
+.wrong-fill {
   border: 3px solid rgb(212 52 52) !important;
 }
-.normal-fill{
+.normal-fill {
   border: var(--bs-border-width) solid var(--bs-border-color);
 }
-
-
 
 .brand-btn {
   --bs-btn-padding-x: 0.75rem;
@@ -157,9 +179,7 @@ $theme-colors: map-merge(
   transition: 1s;
 }
 
-
-
-.max-width-{
+.max-width- {
   &600p {
     min-width: 400px;
     max-width: 750px;
@@ -167,7 +187,7 @@ $theme-colors: map-merge(
 }
 
 .width- {
-  &100{
+  &100 {
     width: 100%;
   }
 }

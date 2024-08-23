@@ -12,7 +12,7 @@ const Btn2 = () => <svg className='svg-test' width="127" height="35" viewBox="0 
 
 
 
-export default function TestPage() {
+export default function TestPage2() {
     const [varib, chngVarib] = useState(true)
   return (
     <div>

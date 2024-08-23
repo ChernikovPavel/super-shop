@@ -21,7 +21,6 @@ export default function AuthForm({ type = 'reg', setUser }) {
       })
       .catch((er) => {
         console.error('ошибка', er.message);
-        console.log('not ok');
         setBorderFill('wrong-fill');
       });
   };

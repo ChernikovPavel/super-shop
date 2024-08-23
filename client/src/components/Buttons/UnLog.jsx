@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { redirect, useNavigate } from 'react-router-dom';
 import './buttons.scss'
-import axiosInstance, { setAccessToken } from '../../../tools/axiosInstance';
+import axiosInstance, { setAccessToken } from '../../tools/axiosInstance';
 
 export default function UnLogButton({setUser}) {
   const [clss, ChangeClss] = useState('');

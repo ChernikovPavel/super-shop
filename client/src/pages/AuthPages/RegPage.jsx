@@ -1,5 +1,5 @@
 import React from 'react'
-import AuthForm from '../../components/AuthForm/AuthForm'
+import AuthForm from '../../components/Forms/AuthForm'
 
 export default function RegPage({setUser}) {
   return (

@@ -5,15 +5,17 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const arr = [];
     const desc = 'крутой товар #';
+
     for (let i = 0; i <= 10; i++) {
       arr.push({
         name: desc + i,
-        price: i * 100,
-        description: 'описание товара ' + 'крутой товар',
+        price: (Math.floor(Math.random() * 100) * 100),
+        description: 'описание товара ',
         image: '/img/' + i,
-        number: Math.floor(Math.random() * 4500) + 500
+        number: Math.floor(Math.random() * 4500) + 500,
       });
     }
+
     await queryInterface.bulkInsert('Products', arr);
   },
 

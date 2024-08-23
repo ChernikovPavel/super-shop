@@ -8,7 +8,7 @@ router.get('/all', async (req, res) => {
     res.send(dirtyProducts);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: 'endpoint in GET products' });
+    res.status(500).json({ message: 'error in endpoint GET all products' });
   }
 });
-module.exports = router
+module.exports = router;

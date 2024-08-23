@@ -1,11 +1,11 @@
-import Root from './Root'
-import NavBar from './svgs/NavBar'
-import RegButton from './svgs/buttons/RegButton'
-import LoginButton from './svgs/buttons/LoginButton'
-import LKButton from './svgs/buttons/LKButton'
-import TestButton from './svgs/buttons/TestButton'
-import UnLogButton from './svgs/buttons/UnLog'
+import Rooot from './misc/Root'
+import NavBar from './misc/NavBar'
+import RegButton from './Buttons/RegButton'
+import LoginButton from './Buttons/LoginButton'
+import LKButton from './Buttons/LKButton'
+import TestButton from './Buttons/TestButton'
+import UnLogButton from './Buttons/UnLog'
 
 
 
-export {Root, NavBar, RegButton, LoginButton, LKButton, TestButton, UnLogButton}
+export {Rooot, NavBar, RegButton, LoginButton, LKButton, TestButton, UnLogButton}

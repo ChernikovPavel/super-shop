@@ -1,17 +1,17 @@
 import React from 'react';
-import HomeButton from './buttons/HomeButton';
-import LKButton from './buttons/LKButton';
-import RegButton from './buttons/RegButton';
-import LoginButton from './buttons/LoginButton';
-import UnLogButton from './buttons/UnLog';
+import HomeButton from '../Buttons/HomeButton';
+import LKButton from '../Buttons/LKButton';
+import RegButton from '../Buttons/RegButton';
+import LoginButton from '../Buttons/LoginButton';
+import UnLogButton from '../Buttons/UnLog';
 
 
 function NavBar({user, setUser}) {
 
   
-console.log('user в NavBar', user)
+
   return (
-    <div className="svg-navbar">
+    <div className="svg-navbar mb-100">
       <HomeButton />
       {user?.login ? <><UnLogButton setUser={setUser}/> <LKButton /></> : (<><RegButton/> <LoginButton/></>)}
       <div>
