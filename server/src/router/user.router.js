@@ -100,4 +100,11 @@ router.post('/log', async (req, res) => {
   res.end();
 });
 
+router.get('/logout', (req,res) => {
+  try {
+    res.clearCookie('refreshToken').sendStatus(200)
+  } catch (error) {
+    res.status(500).send(':O')
+  }
+})
 module.exports = router;

@@ -6,5 +6,6 @@ http://localhost:3000/
             all             GET
             reg             POST
             log             POST
+            logout          GET
         token/
             refresh         GET

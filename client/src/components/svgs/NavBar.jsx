@@ -5,15 +5,15 @@ import RegButton from './buttons/RegButton';
 import LoginButton from './buttons/LoginButton';
 import UnLogButton from './buttons/UnLog';
 
-const switcher = false;
 
 function NavBar({user, setUser}) {
 
+  
 console.log('user в NavBar', user)
   return (
     <div className="svg-navbar">
       <HomeButton />
-      {user ? <><UnLogButton setUser={setUser}/> <LKButton /></> : (<><RegButton/> <LoginButton/></>)}
+      {user?.login ? <><UnLogButton setUser={setUser}/> <LKButton /></> : (<><RegButton/> <LoginButton/></>)}
       <div>
         <svg
           viewBox={`0 0 1413 111`}
