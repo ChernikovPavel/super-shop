@@ -1,0 +1,267 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+// варычи
+$body-bg: #dcdcdc;
+$pc-vw-font-size: 1.45vw;
+$pc-vw-btn-for-abs: 0.8vw;
+$navbar-color: #cc9436;
+$bs-btn-font-family: 'Arimo', sans-serif;
+
+// тема
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    'primary': $primary,
+  )
+);
+
+// селекторы
+body {
+  background-color: #393630;
+}
+
+.form-control:focus {
+  border-color: #1d2838;
+  outline: 0;
+  box-shadow: 20px 20px 15px 2rem rgba(13, 110, 253, 0.25);
+}
+
+.svg-navbar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  > * {
+    position: relative;
+    color: white;
+  }
+}
+
+.m {
+
+  &t- {
+    &100p {
+      margin-top: 100px;
+    }
+
+    &13vw {
+      margin-top: 13vh;
+    }
+    &6d5vw {
+      margin-top: 6.5vw;
+    }
+    
+  }
+
+  &b- {
+    &100 {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+
+
+.svg-btn {
+  display: inline-block;
+  width: min-content;
+  position: absolute;
+  text-align: center;
+  color: white;
+  box-sizing: content-box;
+  fill: #111010;
+  z-index: 1;
+
+  transition: 0.3s;
+
+  &-test {
+    position: fixed;
+    z-index: 1;
+  }
+  &.hoover {
+    color: $navbar-color;
+    transition: 0.35s;
+    // text-shadow: $navbar-color 1px 0 10px;
+  }
+
+  &.left {
+    top: $pc-vw-btn-for-abs;
+    left: $pc-vw-btn-for-abs;
+
+    > span {
+      font-size: $pc-vw-font-size;
+      user-select: none;
+      position: absolute;
+      width: 90%;
+      top: 44%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &.right-0 {
+    top: $pc-vw-btn-for-abs;
+    right: $pc-vw-btn-for-abs;
+
+    > span {
+      font-size: $pc-vw-font-size;
+      line-height: $pc-vw-font-size;
+      user-select: none;
+      position: absolute;
+      width: 90%;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.right-1 {
+    top: $pc-vw-btn-for-abs;
+    right: 14vw;
+
+    > span {
+      font-size: $pc-vw-font-size;
+      line-height: $pc-vw-font-size;
+      user-select: none;
+      position: absolute;
+      width: 90%;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.brand-form-label {
+  transform: translateY(-0.3rem) translateX(-0.3rem);
+}
+.wrong-fill {
+  border: 3px solid rgb(212 52 52) !important;
+}
+.normal-fill {
+  border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.brand-btn {
+  --bs-btn-padding-x: 0.75rem;
+  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-font-family: ;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-font-weight: 400;
+  --bs-btn-line-height: 1.5;
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-width: var(--bs-border-width);
+  --bs-btn-border-color: transparent;
+  --bs-btn-border-radius: var(--bs-border-radius);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 1px rgba(0, 0, 0, 0.075);
+  --bs-btn-disabled-opacity: 0.65;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem
+    rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+  display: inline-block;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  font-family: var(--bs-btn-font-family);
+  font-size: var(--bs-btn-font-size);
+  font-weight: var(--bs-btn-font-weight);
+  line-height: var(--bs-btn-line-height);
+  color: var(--bs-btn-color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+  background-color: var(--bs-btn-bg);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 2px;
+}
+
+.brandPaddingForm {
+  padding-right: 2.5rem;
+  padding-top: 3%;
+  padding-left: 2.5rem;
+  padding-bottom: 3%;
+}
+
+.trans-1 {
+  transition: 1s;
+}
+
+.max-width- {
+  &600p {
+    min-width: 400px;
+    max-width: 750px;
+  }
+}
+
+.width- {
+  &100 {
+    width: 100%;
+  }
+}
+.log {
+  width: 65vw;
+}
+
+
+.rounded- {
+  &05 {
+    border-radius: 2px;
+  }
+}
+
+.brandRegForm {
+  width: 50vw;
+}
+
+.RegInput {
+  margin-top: 1em;
+}
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(0, 0, 0), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
+}
+
+.arimo- {
+  // <weight>: Use a value from 400 to 700
+  font-family: 'Arimo', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  &250 {
+    font-family: 'Arimo', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 250;
+  }
+  &400 {
+    font-weight: 400;
+  }
+}
+
+* {
+  textarea:focus,
+  textarea.form-control:focus,
+  input.form-control:focus,
+  input[type='text']:focus,
+  input[type='password']:focus,
+  input[type='email']:focus,
+  input[type='number']:focus,
+  [type='text'].form-control:focus,
+  [type='password'].form-control:focus,
+  [type='email'].form-control:focus,
+  [type='tel'].form-control:focus,
+  [contenteditable].form-control:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+  }
+}
+
+input.form-control:focus {
+  border-color: #000000;
+}
+
+@import 'bootstrap/scss/bootstrap';

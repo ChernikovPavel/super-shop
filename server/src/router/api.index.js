@@ -1,0 +1,10 @@
+const router = require('express').Router()
+const productR = require('./product.router')
+const tokenR = require('./token.router.js')
+const userR = require('./user.router.js')
+const cartR = require('./cart.router.js')
+router.use('/products', productR)
+router.use('/users', userR)
+router.use('/token', tokenR)
+router.use('/cart', cartR)
+module.exports = router

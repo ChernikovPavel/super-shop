@@ -1,0 +1,61 @@
+// варычи
+
+$pc-vw-font-size: 1.45vw;
+$pc-vw-btn-for-abs: 0.8vw;
+
+// селекторы
+.svg-btn.right-0 {
+
+> span.btn-log-text {
+  font-size: 2.2vw;
+  top: 46%;
+}
+> span.btn-log-text-1 {
+  font-size: 10.2vw;
+  top: 46%;
+}
+}
+
+.svg-btn.left {
+
+  > span.btn-log-text {
+    font-size: 2.2vw;
+    top: 40%;
+  }
+  > span.btn-log-text-1 {
+    font-size: 10.2vw;
+    top: 46%;
+  }
+  }
+
+.svg-btn-test {
+    display: inline-block;
+    width: min-content;
+    position: absolute;
+    text-align: center;
+    color: white;
+    box-sizing: content-box;
+    fill: #111010;
+    z-index: 1;
+    top: 90vh;
+    left: 85vw;
+    // transition: 0.1s;
+    
+    &.hoover {
+      color: rgb(255, 209, 110);
+      transition: 0.35s;
+    }
+  
+
+      > span {
+        font-size: $pc-vw-font-size;
+        user-select: none;
+        position: absolute;
+        width: 90%;
+        top: 44%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+   
+  }

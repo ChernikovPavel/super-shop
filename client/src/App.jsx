@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useEffect, useState } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Rooot, RegButton } from './components';
+import { HomePage, TestPage } from './pages';
+import './tools/index.css';
+import './components/buttons/buttons.scss';
+import axiosInstance, { setAccessToken } from './tools/axiosInstance';
+import RegPage from './pages/AuthPages/RegPage';
+import LogPage from './pages/AuthPages/LogPage';
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const [user, setUser] = useState({ });
+  useEffect(() => {
+
+
+    (async () => {
+      await axiosInstance
+        .get('/api/token/refresh')
+        .then((res) => {
+          setUser((prev) => {
+            return res.data.user;
+          });
+          setAccessToken(res.data.accessToken);
+  
+        })
+        .catch('ОШИБКА В useEffect - ТОКЕН');
+    })();
+  }, []);
+
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Rooot user={user} setUser={setUser}/>,
+      children: [
+        {
+          path: '/',
+          element: <HomePage />,
+        },
+        {
+          path: '/test',
+          element: <TestPage user={user} />,
+        },
+        {
+          path: '/auth/reg',
+          element: <RegPage setUser={setUser} />,
+        },
+        {
+          path: '/auth/log',
+          element: <LogPage setUser={setUser} />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
