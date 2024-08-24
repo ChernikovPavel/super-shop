@@ -38,11 +38,21 @@ body {
 }
 
 .m {
+
   &t- {
-    &100 {
+    &100p {
       margin-top: 100px;
     }
+
+    &13vw {
+      margin-top: 13vh;
+    }
+    &6d5vw {
+      margin-top: 6.5vw;
+    }
+    
   }
+
   &b- {
     &100 {
       margin-bottom: 100px;
@@ -195,11 +205,6 @@ body {
   width: 65vw;
 }
 
-.mt- {
-  &13 {
-    margin-top: 13vh;
-  }
-}
 
 .rounded- {
   &05 {

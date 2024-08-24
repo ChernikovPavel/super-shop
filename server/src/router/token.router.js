@@ -10,7 +10,7 @@ router.get('/refresh', verifyRefreshToken, (req,res)=>{
         res.cookie('refreshToken', refreshToken, cookiesConfig.refresh).json({user, accessToken})
     } catch (error) {
         console.log(error)
-        res.status(203).json({message: 'не удалось передать REFRESH токен', user: null, accessToken: null})
+        res.status(203).json({message: 'не удалось передать REFRESH токен', user: {}, accessToken: ''})
     }
 })
 module.exports = router

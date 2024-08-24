@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axiosInstance from '../../tools/axiosInstance';
+import axiosInstance, { setAccessToken } from '../../tools/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 export default function AuthForm({ type = 'reg', setUser }) {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ export default function AuthForm({ type = 'reg', setUser }) {
       .then((el) => {
         if (!el.data.isError) {
           setUser(el.data.user);
+          setAccessToken(el.data.accessToken)
           navigate('/');
         }
       })

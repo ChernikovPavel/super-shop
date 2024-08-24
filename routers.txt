@@ -1,11 +1,17 @@
+req.body.debug = true - обход verifyAccessToken
+
 http://localhost:3000/      baseURL
     api/                         
         products/
-            all             GET
+            all                    GET
         users/
-            all             GET
-            reg             POST
-            log             POST
-            logout          GET
+            all                    GET
+            reg                    POST
+            log                    POST
+            logout                 GET
         token/
-            refresh         GET
+            refresh                GET
+        cart/
+            add/?productId&userId  POST
+            add/test               POST
+            resend                 POST

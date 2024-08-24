@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js --ext js --ignore sessions"
+    "dev": "nodemon src/server.js --ext js --ignore sessions",
+    "rseed": "npx sequelize db:seed:undo:all & npx sequelize db:seed:all",
+    "rmig": "npx sequelize db:migrate:undo:all & npx sequelize db:migrate"
   },
   "keywords": [],
   "author": "",

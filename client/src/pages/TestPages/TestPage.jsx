@@ -26,7 +26,7 @@ const handler2 = () => {
   return (
     <>
     <div className='stack'>
-<ListOfItems></ListOfItems>
+<ListOfItems user={user} ></ListOfItems>
 </div>
     </>
   );
