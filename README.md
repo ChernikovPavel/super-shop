@@ -1,3 +1,3 @@
 # SUPER-SHOP
-![0.3](readme_assets/03.png)
+![0.3](x_readme_assets/03.png)
 круУуУууто...
