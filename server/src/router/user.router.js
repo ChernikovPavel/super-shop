@@ -66,7 +66,6 @@ router.post('/log', async (req, res) => {
     const { login, email, password } = req.body;
 
     try {
-      console.log(req.body);
       const user = await User.findOne({
         where: { /*email: email,*/ login: login },
       });
@@ -89,10 +88,9 @@ router.post('/log', async (req, res) => {
           user: cleanUser,
         });
         // мистер рефреш токен в куки, мистер аксцес токен в джсон
-        console.log(refreshToken);
         res
           .cookie('refreshToken', refreshToken, cookieConfig.refresh)
-          .json({ user: user.get(), accessToken });
+          .json({ user: cleanUser, accessToken });
       }
     } catch (error) {
       console.log(error);

@@ -1,20 +1,18 @@
-require('dotenv').config();
-const { User, Product, Cart} = require('./db/models');
+let data = 1;
 
-async function up() {
-  const users = await User.findAll({
-    attributes: ['id'],
-    include: [
-      {
-        model: Product,
-        through: "Cart"
-      },
-    ],
-  });
+const arr = [1,2,3,4,5]
 
-  console.log(users);
-  console.log('=====================================');
+const func = () => {
+    console.log("data: ",data)
 
 }
 
-up();
+const arr2 = arr.map((el) => {
+    return {
+        func: func
+    }
+})
+
+data = 3;
+
+arr2[0].func()

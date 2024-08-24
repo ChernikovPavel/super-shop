@@ -9,7 +9,7 @@ export default function Rooot({ user, setUser }) {
     <>
       <NavBar user={user} setUser={setUser}></NavBar>
 
-      <p>curt</p>
+      <p>kurt</p>
       <TestButton />
 
       <div className="mt-6d5vw">

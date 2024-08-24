@@ -3,6 +3,6 @@ module.exports = {
     expiresIn: 1000 * 60 * 3,
   },
   refresh: {
-    expiresIn: 1000 * 60 * 60 * 12 * 4,
+    expiresIn: 1000 * 60 * 60 * 12,
   },
 };

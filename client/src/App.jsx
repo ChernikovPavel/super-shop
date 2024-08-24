@@ -9,7 +9,8 @@ import RegPage from './pages/AuthPages/RegPage';
 import LogPage from './pages/AuthPages/LogPage';
 function App() {
 
-  const [user, setUser] = useState({ });
+  const [user, setUser] = useState({});
+  
   useEffect(() => {
 
 
@@ -35,7 +36,7 @@ function App() {
       children: [
         {
           path: '/',
-          element: <HomePage />,
+          element: <HomePage user={user}/>,
         },
         {
           path: '/test',

@@ -12,22 +12,17 @@ const handler = (event) => {
       password: '2',
       debug: true,
     },
-  })
-    .catch((er) => console.error(er));
+  }).catch((er) => console.error(er));
 };
 
-
-export default function TestPage({user}) {
-
-const handler2 = () => {
-    axiosInstance.get('api/products/all').then(el => console.log(el))
-  }
+export default function TestPage({ user }) {
+  const handler2 = () => {
+    axiosInstance.get('api/products/all').then((el) => console.log(el));
+  };
 
   return (
     <>
-    <div className='stack'>
-<ListOfItems user={user} ></ListOfItems>
-</div>
+      <div className="stack"></div>
     </>
   );
 }

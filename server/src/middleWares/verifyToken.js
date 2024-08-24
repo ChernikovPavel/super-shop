@@ -9,18 +9,19 @@ const verifyRefreshToken = (req, res, next) => {
     next();
   } catch (error) {
     console.log('у пользователя REFRESH TOKEN инвалид');
-    res.status(203).json({ message: 'у пользователя REFRESH TOKEN инвалид' });
+    res.status(203).json({ message: 'у пользователя REFRESH TOKEN инвалид', user: {} });
   }
 };
 
 const verifyAccessToken = async (req, res, next) => {
   try {
     // кажется, американский шпион добавил проверку на "debug" в теле запроса, которая отключает проверку и записывает случайного пользователя в locals
-    if (!(req.body.debug)) {
+    if (!req.body.debug) {
       const accessToken = req.headers.authorization;
       const { user } = jwt.verify(accessToken, process.env.SECRET_ACCESS_TOKEN);
       res.locals.user = user;
     } else {
+      // обход + передача юзера в локалс (возможны багулины)
       const user = await User.findOne();
       res.locals.user = user.get();
     }

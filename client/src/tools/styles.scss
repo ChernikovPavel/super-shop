@@ -1,12 +1,15 @@
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
 
-// варычи
+// варычи bootstrap
 $body-bg: #dcdcdc;
 $pc-vw-font-size: 1.45vw;
 $pc-vw-btn-for-abs: 0.8vw;
 $navbar-color: #cc9436;
 $bs-btn-font-family: 'Arimo', sans-serif;
+
+//мои варычи
+$darkgray: #b9b9b9;
 
 // тема
 $theme-colors: map-merge(
@@ -19,6 +22,11 @@ $theme-colors: map-merge(
 // селекторы
 body {
   background-color: #393630;
+}
+.card.bg- {
+  &darkgray{
+    background-color: $darkgray;
+  }
 }
 
 .form-control:focus {

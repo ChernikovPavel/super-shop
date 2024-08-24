@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import axiosInstance from '../../tools/axiosInstance';
 
 export default function ListOfItems({ user }) {
@@ -8,15 +8,6 @@ export default function ListOfItems({ user }) {
     axiosInstance.get('api/products/all').then((el) => setProducts(el.data));
   }, []);
 
-  const testHandler = (el = { id: 2 }) => {
-    axiosInstance
-      .post(
-        '/api/cart/resend',
-        {},
-        { params: { productId: el.id, userId: user.id } }
-      )
-      .catch((er) => console.log(er));
-  };
   const toCartHandler = (el) => {
     axiosInstance
       .post(
@@ -40,22 +31,25 @@ export default function ListOfItems({ user }) {
 
   return (
     <>
-      <button className="btn btn-warning" onClick={testHandler}>
-        click
-      </button>
-      {products.map((el) => (
-        <div key={el.id} className="card">
-          <p>{el.name}</p>
-          <p>картинка по адресу {el.image}</p>
-          <p>стоимость {el.price}$</p>
-          <p>количество: {el.number}</p>
-          <p>{el.description}</p>
-          <p>создано: {el.createdAt}</p>
-          <button onClick={() => toCartHandler(el)} className="btn btn-warning">
-            добавить в карзину
-          </button>
-        </div>
-      ))}
+
+      {products.map((el) => {
+       if(el.number > 0) return (
+          <div key={el.id} className="card my-4 bg-darkgray">
+            <p>{el.name}</p>
+            <p>картинка по адресу: {el.image}</p>
+            <p>стоимость: {el.price}$</p>
+            <p>количество: {el.number}</p>
+            <p>{el.description}</p>
+            <button
+              disabled={!Object.keys(user).length}
+              onClick={() => toCartHandler(el)}
+              className="btn btn-warning"
+            >
+              добавить в карзину
+            </button>
+          </div>
+        );
+      })}
     </>
   );
 }

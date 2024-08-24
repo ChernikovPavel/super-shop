@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 router.get('/all', async (req, res) => {
   try {
-    const products = await Product.findAll({order: ['createdAt']});
+    const products = await Product.findAll({ order: ['createdAt']});
     res.send(products);
   } catch (error) {
     console.log(error);
